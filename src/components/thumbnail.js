@@ -1,10 +1,10 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+var stylePropType = require('react-style-proptype')
 import {
   TouchableOpacity,
   ImageBackground,
   Image,
-  ViewPropTypes,
   ImagePropTypes,
   Linking,
   StyleSheet,
@@ -25,7 +25,7 @@ export default class Thumbnail extends PureComponent {
   static propTypes = {
     ...ImageBackground.propTypes,
     children: PropTypes.node,
-    containerStyle: ViewPropTypes.style,
+    containerStyle: stylePropType,
     imageHeight: PropTypes.oneOfType([
       PropTypes.number,
       PropTypes.string,
@@ -34,10 +34,10 @@ export default class Thumbnail extends PureComponent {
       PropTypes.number,
       PropTypes.string,
     ]),
-    iconStyle: Image.propTypes.style,
+    iconStyle: stylePropType,
     onPress: PropTypes.func,
     onPressError: PropTypes.func,
-    style: ViewPropTypes.style,
+    style: stylePropType,
     type: PropTypes.oneOf(Object.keys(TYPES)),
     url: PropTypes.string.isRequired,
     showPlayIcon: PropTypes.bool
